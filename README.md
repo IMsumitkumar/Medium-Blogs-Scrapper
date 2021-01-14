@@ -8,9 +8,10 @@
 
 
 - Create a local copy of this repo
-jump to your desired directory
+>jump to your desired directory
+>open terminal or cmd
 
-      git clone <url>
+      git clone https://github.com/IMsumitkumar/Medium-Blogs-Scrapper.git
 
 - Create fresh virtual env using anaconda
     
