@@ -3,9 +3,9 @@ try:
     from bs4 import BeautifulSoup as bs4
     from urllib.request import urlopen, Request
     from datetime import datetime
-    from dateutil import parser
     import numpy as np
     import pandas as pd
+    np.warnings.filterwarnings('ignore', category=np.VisibleDeprecationWarning)
 except ModuleNotFoundError:
     print("Install dependencies from requirements.txt")
 except Exception as e:
@@ -122,6 +122,7 @@ def fetch_links(request_url: str, tag: str):
                         
             except Exception as e:
                 print(e)
+                print("Tag not Found! Try another One.")
                 
             
         a = np.array(a)
@@ -159,4 +160,7 @@ if __name__ == '__main__':
     
     data = fetch_links(request_url=req, tag=tag)
     data.columns = ['Creator', 'post_date', 'read_time', 'tag', 'claps', 'responses', 'Title', 'post_link', 'blog_html']
+
+
+    print(data)
 
